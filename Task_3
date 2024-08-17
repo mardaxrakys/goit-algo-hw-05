@@ -1,0 +1,33 @@
+import timeit
+
+# Реалізація алгоритмів (коротко для прикладу, вам потрібно реалізувати їх детально)
+
+def boyer_moore(text, pattern):
+    # Реалізація алгоритму Боєра-Мура
+    pass
+
+def kmp_search(text, pattern):
+    # Реалізація алгоритму Кнута-Морріса-Пратта
+    pass
+
+def rabin_karp(text, pattern):
+    # Реалізація алгоритму Рабіна-Карпа
+    pass
+
+# Тестування та порівняння
+
+text1 = "your first text here"
+text2 = "your second text here"
+pattern_existing = "existing substring"
+pattern_non_existing = "nonexisting"
+
+def time_search(search_function, text, pattern):
+    return timeit.timeit(lambda: search_function(text, pattern), number=1)
+
+print("Testing Boyer-Moore with existing pattern:", time_search(boyer_moore, text1, pattern_existing))
+print("Testing KMP with existing pattern:", time_search(kmp_search, text1, pattern_existing))
+print("Testing Rabin-Karp with existing pattern:", time_search(rabin_karp, text1, pattern_existing))
+
+print("Testing Boyer-Moore with non-existing pattern:", time_search(boyer_moore, text1, pattern_non_existing))
+print("Testing KMP with non-existing pattern:", time_search(kmp_search, text1, pattern_non_existing))
+print("Testing Rabin-Karp with non-existing pattern:", time_search(rabin_karp, text1, pattern_non_existing))
